@@ -25,13 +25,14 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/OPTIMIZATIONS.md](docs/O
 
 ## Build & run
 
+Requires [Node.js](https://nodejs.org/) 20 or later (includes `npm`). Windows/macOS/Linux
+(developed and benchmarked on Windows 11).
+
 ```bash
 npm install          # if the Electron binary fails to download, see Troubleshooting
 npm run build        # Vite (UI) + esbuild (main/preload/bench) — sub-second rebuilds
 npm start            # build + launch
 ```
-
-Requires Node 20+. Windows/macOS/Linux (developed and benchmarked on Windows 11).
 
 ## Using it
 
