@@ -1,0 +1,6 @@
+{
+  "$doc": "Executable paths for the cross-browser comparison benchmark (npm run compare). Paths are checked for existence; missing browsers are skipped. Firefox is not supported by the CDP-based harness yet (see docs/ROADMAP.md).",
+  "chrome": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "edge": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+  "brave": "C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"
+}

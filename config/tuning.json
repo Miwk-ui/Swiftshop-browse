@@ -1,0 +1,46 @@
+{
+  "$doc": "Written by `npm run tune` — see evidence for the measurements behind each decision.",
+  "enabledSets": [],
+  "dns": null,
+  "warmup": true,
+  "evidence": {
+    "no-quic": {
+      "avgNavDelta": 0.03618421052631579,
+      "startupDelta": 0.037200429235721866,
+      "enabled": false,
+      "sampleSites": 1
+    },
+    "gpu-raster": {
+      "avgNavDelta": 0.08881578947368421,
+      "startupDelta": 0.06832001907714313,
+      "enabled": false,
+      "sampleSites": 1
+    },
+    "big-cache": {
+      "avgNavDelta": 0.03125,
+      "startupDelta": -0.042804340050077605,
+      "enabled": false,
+      "sampleSites": 1
+    },
+    "no-background-throttle": {
+      "avgNavDelta": 0.02138157894736842,
+      "startupDelta": 0.029092643376654317,
+      "enabled": false,
+      "sampleSites": 1
+    },
+    "warmup": {
+      "avgDeltaWhenDisabled": -0.04111842105263158,
+      "keepWarmup": true
+    },
+    "dns": {
+      "systemMedianMs": 22,
+      "best": {
+        "name": "cloudflare",
+        "median": 19.5
+      },
+      "chosen": null
+    },
+    "benchmarkDir": "bench\\results\\2026-07-05T20-22-59-897Z",
+    "decidedAt": "2026-07-05T20:31:06.232Z"
+  }
+}

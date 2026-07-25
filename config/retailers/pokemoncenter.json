@@ -1,0 +1,15 @@
+{
+  "name": "Pokémon Center",
+  "homepage": "https://www.pokemoncenter.com/",
+  "dnsHosts": [
+    "www.pokemoncenter.com"
+  ],
+  "preconnectOrigins": [
+    "https://www.pokemoncenter.com"
+  ],
+  "socketsPerOrigin": 2,
+  "bookmarks": [
+    { "title": "Pokémon Center", "url": "https://www.pokemoncenter.com/" }
+  ],
+  "$doc": "Pokémon Center runs on Salesforce Commerce Cloud with assets mostly served same-origin. The site sits behind aggressive bot protection; benchmark numbers may reflect challenge pages rather than the storefront. Use `npm run profile` to find CDN hosts worth preconnecting."
+}

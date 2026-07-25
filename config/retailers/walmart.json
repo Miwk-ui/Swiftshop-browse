@@ -1,0 +1,17 @@
+{
+  "name": "Walmart",
+  "homepage": "https://www.walmart.com/",
+  "dnsHosts": [
+    "www.walmart.com",
+    "i5.walmartimages.com"
+  ],
+  "preconnectOrigins": [
+    "https://www.walmart.com",
+    "https://i5.walmartimages.com"
+  ],
+  "socketsPerOrigin": 2,
+  "bookmarks": [
+    { "title": "Walmart", "url": "https://www.walmart.com/" }
+  ],
+  "$doc": "Walmart serves product imagery from i5.walmartimages.com; warming that origin should help product-grid paint. Verify with `npm run profile`."
+}

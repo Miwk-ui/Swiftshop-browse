@@ -1,0 +1,19 @@
+{
+  "name": "Target",
+  "homepage": "https://www.target.com/",
+  "dnsHosts": [
+    "www.target.com",
+    "target.scene7.com",
+    "redsky.target.com",
+    "assets.targetimg1.com"
+  ],
+  "preconnectOrigins": [
+    "https://www.target.com",
+    "https://target.scene7.com"
+  ],
+  "socketsPerOrigin": 2,
+  "bookmarks": [
+    { "title": "Target", "url": "https://www.target.com/" }
+  ],
+  "$doc": "dnsHosts are resolved at launch to warm the DNS cache. preconnectOrigins get TCP+TLS sockets opened via session.preconnect. Run `npm run profile` to discover additional high-traffic hosts worth adding — the profiler reports top origins by request count from real page loads."
+}

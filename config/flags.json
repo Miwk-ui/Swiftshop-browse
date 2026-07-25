@@ -1,0 +1,25 @@
+{
+  "$doc": "Chromium command-line switch sets. Every set is OFF by default. `npm run tune` benchmarks each candidate against baseline and enables a set in config/tuning.json only when it shows a measured improvement on THIS machine and network. Each entry documents what the switch does, why it might help, and its tradeoffs. Never enable a set by hand without benchmark evidence.",
+  "sets": {
+    "baseline": {
+      "switches": [],
+      "doc": "No extra switches. Modern Chromium defaults are already heavily tuned; every candidate below must beat this configuration in A/B benchmarks to be enabled."
+    },
+    "no-quic": {
+      "switches": [["disable-quic"]],
+      "doc": "Disables HTTP/3 (QUIC), forcing TCP + HTTP/2. Hypothesis: on networks that throttle or poorly route UDP, h2 over a warm TCP pool beats QUIC. Target and Walmart sit on Akamai which supports h3, so on healthy networks this should LOSE — the A/B test exists to detect the unhealthy-UDP case. Tradeoff: loses QUIC 0-RTT connection resumption."
+    },
+    "gpu-raster": {
+      "switches": [["enable-gpu-rasterization"], ["enable-zero-copy"]],
+      "doc": "Forces GPU rasterization plus zero-copy texture upload from renderer to GPU memory. Hypothesis: faster paint on image-heavy product grids. Chromium already enables GPU raster on most modern GPUs, so this often measures neutral; on blocklisted or older GPU/driver combos forcing it can regress or glitch. Enable only on measured improvement."
+    },
+    "big-cache": {
+      "switches": [["disk-cache-size", "1073741824"]],
+      "doc": "Raises the HTTP disk cache to 1 GiB (default is dynamically sized, often 100-300 MB). Hypothesis: the three retailers' image CDNs produce enough cacheable bytes that a larger cache raises the repeat-visit hit rate. Effect only visible on warm/repeat benchmarks over multiple sessions. Tradeoff: disk usage."
+    },
+    "no-background-throttle": {
+      "switches": [["disable-background-timer-throttling"], ["disable-renderer-backgrounding"]],
+      "doc": "Prevents Chromium from deprioritizing background renderers, keeping the warm spare renderer and background tabs hot for instant tab switching. Tradeoff: higher CPU and battery usage with many tabs open."
+    }
+  }
+}
